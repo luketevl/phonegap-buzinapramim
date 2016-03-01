@@ -1,0 +1,31 @@
+<div class="pages navbar-fixed bg-gereric-color">
+  <div class="page profile-box theme-white animated pageTransition">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href back-button class="link icon-only back">
+                    <i class="icon icon-back"></i>
+                </a>
+            </div>
+            <div class="center">
+              Perfil
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+     <div class="page-content">
+        <section class="profile-content">
+          <section class="profile-info">
+            <figure>
+              <img class="profile-image" src="img/profile-img.jpg">
+            </figure>
+            <h3>{{nome}}</h3>
+            <p class="email">{{mail}}</p>
+          </section>
+        </section>
+        <div class="logout">
+          <button ng-click="logout()">Sair</button>
+        </div>
+    </div>
+  </div>
+</div>

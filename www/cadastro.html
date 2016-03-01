@@ -1,0 +1,39 @@
+<div class="pages navbar-fixed bg-gereric-color">
+  <div class="page register-box theme-white animated pageTransition">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a ng-click="voltarInicio()" class="link icon-only back">
+                    <i class="icon icon-back"></i>
+                </a>
+            </div>
+            <div class="center">Cadastro</div>
+            <div class="right"></div>
+        </div>
+    </div>
+     <div class="page-content">
+        <section class="resgister-content">
+          <figure>
+            Logo
+          </Figure>
+          <form name="registerForm" novalidate>
+            <ul>
+              <li>
+                <input type="text" name="name" placeholder="Nome Completo" ng-model="nome" required>
+              </li>
+              <li>
+                <input type="email" name="mail" placeholder="E-mail" ng-model="email" required>
+              </li>
+              <li>
+                <input type="password" name="password" placeholder="Senha" ng-model="senha" required>
+              </li>
+              <li>
+                <input type="text" class="sonums" name="phone" placeholder="Número de Telefone (opcional)" ng-model="telefone">
+              </li>
+            </ul>
+            <button id="btn-register" ng-disabled="registerForm.$invalid" type="submit" name="send" ng-click="btnRegister()">Cadastrar</button>
+          </form>
+        </section>
+    </div>
+  </div>
+</div>

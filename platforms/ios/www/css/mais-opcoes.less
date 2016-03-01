@@ -1,0 +1,155 @@
+
+.mais-opcoes-box{
+
+	background-color: #efeff4;
+
+	select{
+		text-align: center;
+	}
+
+	.navbar{
+		background-color: #333538;
+		color: #fff;
+
+		.center{
+			width: 40%;
+			font-weight: 400!important;
+		}
+
+		&:after{
+			background: transparent;
+		}
+	}
+
+	.page-content{
+
+		margin: 5% 0 0 0;
+
+		.more-options-content{
+
+			.btnSave-mais-opcoes{
+				width: 80%;
+				text-align: center;
+				font-size: 17px;
+				color: #fff;
+				padding: 15px 0;
+				border:none;
+				margin: 10% auto 20% auto;
+				display: block;
+				background-color: #0084cc;
+			}
+
+			.color-content{
+				overflow-x:scroll;
+				margin: 5% 0 0 0;
+
+				&::-webkit-scrollbar{
+				  display: none;
+				}
+
+				ul{
+					width:700px;
+					height:65px;
+					padding:10px 0 0 5%;
+
+
+					li{
+						display: inline-block;
+						margin: 0 1% 0 0;
+
+						&:last-child{
+							margin: 0;
+						}
+
+						.colorBox{
+							width: 50px;
+							height: 51px;
+							position: relative;
+							border:1px solid #e3e3e3;
+						}
+
+						input[type=checkbox] {
+
+							visibility: hidden;
+
+							&:before{
+
+								content: "";
+								width: 49px;
+								height: 50px;
+								position: absolute;
+								visibility: visible;
+								left: -3px;
+								top: -3px;
+							}
+
+							&:checked:before{
+
+								border: 3px solid #0084cc;
+
+							}
+
+						}
+
+					}
+				}
+			}
+
+			h3{
+				font-size: 17px;
+				color: #333538;
+				font-weight: normal;
+				text-align: center;
+				margin: 10% 0 0 0;
+			}
+
+			button{
+				font-size: 12px;
+				text-align: center;
+				margin: auto;
+				display:block;
+				border: none;
+				color: #0084cc;
+				background-color: transparent;
+			}
+
+			.select-box{
+				margin: 5% 0 0 0;
+				background-color: #fff;
+				text-align: center;
+				padding: 10% 0;
+
+				select{
+					width: 80%;
+					border: 1px solid #efeff4;
+					background:transparent;
+					padding:2%;
+					font-size: 17px;
+					text-align: center!important;
+				}
+
+				.years-select-box{
+
+					ul{
+						li{
+							width: 40%;
+							display: inline-block;
+							margin: 0 2% 0 0;
+
+							.span-date{
+								margin: 1% 0;
+								font-size: 15px;
+								color: #333538;
+							}
+
+							select{
+								font-size: 13px;
+								text-align: center!important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

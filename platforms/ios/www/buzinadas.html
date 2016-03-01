@@ -1,0 +1,61 @@
+<div class="pages navbar-fixed">
+  <div class="page buzinadas-box">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left"></div>
+            <div class="center">
+              <img src="img/logo-internas.png">
+            </div>
+            <div class="right">
+                <a ng-click="profile()">
+                    profile
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="subnavbar">
+      <div class="buttons-row">
+        <a ng-click="goToHome()" class="button">Buscar</a>
+        <a ng-click="buzinadas()" class="button actived">Buzinadas</a>
+      </div>
+    </div>
+     <div class="page-content animated pageTransition">
+        <section class="buzinada-content">
+          <loading></loading>
+          <ul>
+              <li ng-repeat="buzinada in buzinadas">
+                <div class="card">
+                  <div class="card-content-inner">
+                    <div class="cars-quantity">
+                      <p>
+                        <span id="total-cars" ng-click="buzinadaList(buzinada.tootId)">{{buzinada.vehiclesCount}}</span>
+                        <span class="car-text" ng-if="buzinada.vehiclesCount == 1">Veículo</span>
+                        <span class="car-text" ng-if="buzinada.vehiclesCount > 1">Veículos</span>
+                      </p>
+                    </div>
+                    <div class="text-content">
+                      <h2 ng-click="buzinadaList(buzinada.tootId)">{{buzinada.vehicleBrandName}} {{buzinada.vehicleModelName}}</h2>
+                      <p><strong>De</strong> {{buzinada.minVehicleYear}} á {{buzinada.maxVehicleYear}}</p>
+                      <p><strong>Até</strong> R$ {{formatReal(buzinada.vehiclePrice)}}</p>
+                      <ul class="color">
+                        <li ng-repeat="cor in buzinada.vehicleColorsNames">
+                           {{cor.name}}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <small class="footer-text">Habilitar ou desabilitar buzinada</small>
+                    <div class="checkbox-loader"></div>
+                    <label class="label-switch switch">
+                      <input type="checkbox" ng-model="checkStatus" ng-checked="buzinada.receiveNotification" ng-click="CheckBoxChanged(checkStatus, buzinada.tootId)">
+                      <div class="checkbox"></div>
+                    </label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </section>
+    </div>
+  </div>
+</div>

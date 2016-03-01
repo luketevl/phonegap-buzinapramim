@@ -1,0 +1,34 @@
+<div class="pages navbar-fixed">
+  <div class="page lista-marca-box theme-white animated pageTransition">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a ng-click="goToHome()" class="link icon-only back">
+                    <i class="icon icon-back"></i>
+                </a>
+            </div>
+            <div class="center">
+              Marcas
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+     <div class="page-content">
+        <section class="brands-list-content">
+          <div class="list-block">
+             <loading></loading>
+              <ul>
+                <li ng-repeat="marca in marcas">
+                  <label class="label-radio item-content" ng-init="marca.checked = false;">
+                    <input type="radio" name="my-radio" value="{{ marca.name }}" ng-model="marca.checked" ng-click="itemSelected()">
+                    <div class="item-inner">
+                      <div class="item-title">{{ marca.name }}</div>
+                    </div>
+                  </label>
+                </li>
+              </ul>
+          </div>
+        </section>
+    </div>
+  </div>
+</div>

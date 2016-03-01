@@ -1,0 +1,208 @@
+.home-box{
+
+	background-color: #ececf1;
+
+	.changedContent{
+		color: #f99!important;
+		text-transform: uppercase;
+		padding-top: 2px!important;
+		padding-right:2px!important;
+		font-size: 12 px!important;
+	}
+
+	.navbar{
+		background-color: #333538;
+
+		.left{
+			width: 18%;
+		}
+
+		&:after{
+			background: transparent;
+		}
+
+		.center{
+
+			margin: auto;
+			text-align: center;
+			width: 30%;
+			padding: 10px 0 0 0;
+
+			img{
+				width:76px;
+				height:32px;
+			}
+		}
+
+		.right{
+
+			margin: 0 8% 0 0;
+
+			a{
+				display: block;
+				width:22px;
+				height:20px;
+				text-indent: -9999px;
+				overflow: hidden;
+				background: url(../img/sprite.png) no-repeat;
+				background-position: -8px -3px;
+			}
+		}
+	}
+
+	.subnavbar{
+
+		background-color: #333538;
+
+		a{
+			margin: 0 0 -11px 0;
+			border: none;
+			color: #fff;
+			border-radius: 0;
+
+			&.actived{
+				border-bottom: 4px solid #f58100;
+				border-left: none;
+				border-top: none;
+				border-right: none;
+				color: #fff;
+				border-radius: 0;
+			}
+		}
+	}
+
+	.page-content{
+
+		.home-content{
+			width: 90%;
+			margin: auto;
+
+			ul{
+
+				margin: 13% 0 0 0;
+
+				li{
+					padding: 3% 5%;
+					background-color: #fff;
+					margin: 0 0 1px 0;
+
+					&:first-child{
+						border-radius:10px 10px 0 0;
+					}
+
+					&:last-child{
+						border-radius:0 0 10px 10px;
+					}
+
+					i{
+						overflow: hidden;
+						text-indent: -999999px;
+						display:block;
+						float: left;
+						background: url(../img/sprite.png) no-repeat;
+					}
+
+					&.brands-car{
+						i{
+							width:22px;
+							height:22px;
+							background-position: -7px -34px;
+						}
+					}
+
+					&.model-car{
+						i{
+							width:18px;
+							height:15px;
+							background-position: -43px -8px;
+							margin: 4px 0 0 0;
+						}
+					}
+
+					&.year-car{
+						i{
+							width:16px;
+							height:18px;
+							background-position: -79px -35px;
+							margin: 2px 0 0 0;
+						}
+					}
+
+					&.more{
+						i{
+							width:19px;
+							height:19px;
+							background-position: -43px -35px;
+							margin: 2px 0 0 0;
+						}
+					}
+
+					button{
+						display: block;
+						border: none;
+						background: transparent;
+						width: 100%;
+						text-align: left;
+						position: relative;
+
+						span{
+								font-size: 16px;
+								color: #333538;
+								margin: 0 0 0 3%;
+								padding: 1px 0 0 0;
+								display: inline-block;
+						}
+
+						&:after{
+							content:url(../img/arrow-icon.png);
+							position: absolute;
+							right: -9px;
+							top:7px;
+							width:8px;
+							height:12px;
+						}
+
+						input[type=text]{
+
+							border: none;
+							width: 116px;
+							text-align: right;
+							padding: 0 4px 0 0;
+
+							&.arrow-icon-put{
+								font-size: 14px;
+								color: #c7c7cc;
+								float:right;
+								margin:3px 0 0 0;
+								position: relative;
+
+								&.arrow-icon-put-actived{
+									color: #f58100;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			button[disabled]{
+				background-color: #c1c1c0;
+			}
+
+			.search-btn{
+				width: 100%;
+				text-align: center;
+				font-size: 17px;
+				color: #fff;
+				padding: 15px 0;
+				border:none;
+				margin: 5% 0 0 0;
+				background:url(../img/search-icon.png) no-repeat #0084cc;
+				background-position: 63px 17px;
+				display: block;
+			}
+		}
+
+	}
+
+}

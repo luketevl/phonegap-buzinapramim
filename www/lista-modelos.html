@@ -1,0 +1,43 @@
+<div class="pages navbar-fixed">
+  <div class="page lista-modelos-box theme-white animated pageTransition">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a ng-click="goToHome()" class="link icon-only back">
+                    <i class="icon icon-back"></i>
+                </a>
+            </div>
+            <div class="center">
+              Modelo
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+     <div class="page-content">
+        <section class="models-list-content">
+             <div class="list-block">
+             <loading></loading>
+              <ul>
+                <li ng-repeat="modelo in modelos">
+                  <label class="label-radio item-content" ng-init="modelo.checked = false;">
+                    <input type="radio" name="my-radio" value="{{ modelo.name }}" ng-model="modelo.checked" ng-click="itemSelected()">
+                    <div class="item-inner">
+                      <div class="item-title">{{ modelo.name }}</div>
+                    </div>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <div ng-show="modelos.length == 0 || modelos.length == null" class="no-result-box">
+              <div class="text-box">
+                <h3>Nenhum resultado</h3>
+                <p>
+                  Você precisa escolher uma marca.
+                </p>
+              </div>
+            </div>
+        </section>
+    </div>
+  </div>
+</div>

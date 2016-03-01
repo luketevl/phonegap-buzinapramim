@@ -1,0 +1,66 @@
+<div class="pages navbar-fixed bg-gereric-color">
+  <div class="page mais-opcoes-box theme-white animated pageTransition">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a ng-click="goToHome()" class="link icon-only back">
+                    <i class="icon icon-back"></i>
+                </a>
+            </div>
+            <div class="center">
+              Mais opções
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+     <div class="page-content">
+        <section class="more-options-content">
+        <h3>Escolha uma ou mais cores</h3>
+        <div class="color-content">
+          <loading></loading>
+          <ul>
+            <li ng-repeat="cor in cores">
+              <div class="colorBox" style="background-color:{{cor.hex}};" ng-init="cor.checked = false;">
+                <input type="checkbox" ng-model="cor.checked">
+              </div>
+            </li>
+          </ul>
+        </div>
+        <h3>Selecione um ano</h3>
+        <div class="select-box">
+          <div class="years-select-box">
+            <form name="year-form">
+              <ul>
+                <li>
+                  <p class="span-date">A partir de</p>
+                  <select class="year-begin" ng-model="anoInicio" ng-options="option for option in yearList">
+
+                  </select>
+                </li>
+                <li>
+                  <p class="span-date">Até</p>
+                  <select class="year-final" ng-model="anoFim" ng-options="option for option in yearList">
+                
+                  </select>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+          <h3>Preço até</h3>
+          <div class="select-box">
+            <select ng-model="valorCarro" ng-options="option for option in priceList">
+
+            </select>
+          </div>
+          <h3>Quilometragem até</h3>
+          <div class="select-box">
+            <select ng-model="kmCarro" ng-options="option for option in kmList">
+
+            </select>
+          </div>
+          <button ng-click="btnSalvarMaisOpcoes()" class="btnSave-mais-opcoes">Salvar</button>
+        </section>
+    </div>
+  </div>
+</div>

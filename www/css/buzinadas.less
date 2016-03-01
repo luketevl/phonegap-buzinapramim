@@ -1,0 +1,261 @@
+.buzinadas-box{
+
+	background-color: #ececf1;
+
+	.footer-text{
+		color: #aaacad;
+		vertical-align: middle;
+	}
+
+	.navbar{
+		background-color: #333538;
+
+		.left{
+			width: 18%;
+		}
+
+		&:after{
+			background: transparent;
+		}
+
+		.center{
+
+			margin: auto;
+			text-align: center;
+			width: 30%;
+			padding: 10px 0 0 0;
+
+			img{
+				width:76px;
+				height:32px;
+			}
+		}
+
+		.right{
+
+			margin: 0 8% 0 0;
+
+			a{
+				display: block;
+				width:22px;
+				height:20px;
+				text-indent: -9999px;
+				overflow: hidden;
+				background: url(../img/sprite.png) no-repeat;
+				background-position: -8px -3px;
+			}
+		}
+	}
+
+	.subnavbar{
+		background-color: #333538;
+
+		a{
+			margin: 0 0 -11px 0;
+			border:none;
+			border-left-width:0!important;
+			color: #fff;
+			border-radius: 0;
+
+			&.actived{
+				border-bottom: 4px solid #f58100;
+				border-left: none;
+				border-top: none;
+				border-right: none;
+				color: #fff;
+				border-radius: 0;
+			}
+		}
+	}
+
+	.page-content{
+
+		margin: 10% 0 0 0;
+
+		.buzinada-content{
+			width: 90%;
+			margin: auto;
+
+
+			ul{
+
+				text-align: center;
+				margin: 0 0 45% 0;
+
+				li{
+					.card{
+
+						width: 100%;
+						border-radius: 5px;
+						margin: 0 auto 3% auto;
+						padding: 0 0 1% 0;
+						max-width: 319px;
+
+						.card-content-inner{
+
+							.card-footer{
+
+								margin: 2% 0 0 0;
+
+								.label-switch{
+									display: inline-block;
+									vertical-align: middle;
+									width: 52px;
+									border-radius: 16px;
+									box-sizing: border-box;
+									height: 32px;
+									position: relative;
+									cursor: pointer;
+									align-self: center;
+
+									input[type=checkbox]{
+										display: none;
+
+										&:checked + .checkbox{
+											background: #4CD964 none repeat scroll 0% 0%;
+										}
+
+										&:checked + .checkbox:before{
+											transform: scale(0);
+										}
+
+										&:checked + .checkbox:after{
+											transform: translateX(20px);
+										}
+									}
+
+									.checkbox{
+										width: 52px;
+										border-radius: 16px;
+										box-sizing: border-box;
+										height: 32px;
+										background: #E5E5E5 none repeat scroll 0% 0%;
+										z-index: 0;
+										margin: 0px;
+										padding: 0px;
+										-moz-appearance: none;
+										border: medium none;
+										cursor: pointer;
+										position: relative;
+										transition-duration: 0.3s;
+
+										&:before{
+											content: " ";
+											position: absolute;
+											left: 2px;
+											top: 2px;
+											width: 48px;
+											border-radius: 16px;
+											box-sizing: border-box;
+											height: 28px;
+											background: #FFF none repeat scroll 0% 0%;
+											z-index: 1;
+											transition-duration: 0.3s;
+											transform: scale(1);
+										}
+
+										&:after{
+											content: " ";
+											height: 28px;
+											width: 28px;
+											border-radius: 28px;
+											background: #FFF none repeat scroll 0% 0%;
+											position: absolute;
+											z-index: 2;
+											top: 2px;
+											left: 2px;
+											box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+											transform: translateX(0px);
+											transition-duration: 0.3s;
+										}
+									}
+								}
+
+								.switch{
+									position: absolute;
+									right: 0;
+									bottom: 0;
+								}
+							}
+
+							.cars-quantity{
+								width: 72px;
+								height: 72px;
+								float: left;
+								display: block;
+								text-align: center;
+								padding: 6px 0 0 0;
+								background-color: #e1eff7;
+
+								p{
+
+									color: #0079c4;
+
+									span{
+											font-size:14px;
+											font-weight: bold;
+											display: block;
+
+											&.car-text{
+												font-size: 12px;
+												font-weight: normal;
+											}
+									}
+								}
+							}
+
+							.text-content{
+								width: 65%;
+								float: left;
+								margin: 0 0 0 5%;
+								line-height:5px;
+								position: relative;
+								text-align: left;
+
+								h2{
+									font-size: 16px;
+									color: #333538;
+									margin: 5px 0 0 0;
+								}
+
+								.color{
+
+									white-space: nowrap;
+									width:100%;
+									height: 20px;
+									overflow: hidden;
+									text-overflow: ellipsis;
+									padding: 2px 0 0 0;
+									margin: 0!important;
+									text-align: left;
+
+									li{
+										display: inline;
+										margin: 0 3px 0 0;
+										font-size: 12px;
+										color: #333538;
+
+										&:last-child{
+											margin: 0;
+										}
+									}
+								}
+
+								p{
+									font-size: 12px;
+									color: #333538;
+
+									&.description-car{
+										font-size: 11px;
+										color: #929293;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+}

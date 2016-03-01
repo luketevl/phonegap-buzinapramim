@@ -1,0 +1,59 @@
+<div class="pages navbar-fixed">
+  <div class="page home-box" ng-init='load()'>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left"></div>
+            <div class="center">
+              <img src="img/logo-internas.png">
+            </div>
+            <div class="right">
+                <a ng-click="profile()">
+                    profile
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="subnavbar">
+      <div class="buttons-row">
+        <a ng-click="goToHome()" class="button actived">Buscar</a>
+        <a ng-click="buzinadas()" class="button">Buzinadas</a>
+      </div>
+    </div>
+     <div class="page-content animated pageTransition">
+        <div class="flexslider">
+              <ul class="slides">
+                <li><img src="img/banner-img.jpg"></li>
+                <li><img src="img/banner-img.jpg"></li>
+                <li><img src="img/banner-img.jpg"></li>
+              </ul>
+        </div>
+        <section class="home-content">
+          <form name="carSearchForm" novalidate>
+            <ul>
+              <li class="brands-car">
+                <button ng-click="marcaDoCarro()">
+                  <i>brand</i>
+                  <span class="span-title">Marca do carro</span>
+                  <input type="text" id="brand-selected" ng-model="marca" class="arrow-icon-put" readonly>
+                </button>
+              </li>
+              <li class="model-car">
+                <button ng-click="modeloDoCarro()">
+                <i>model</i>
+                  <span class="span-title">Modelo</span>
+                  <input type="text" id="model-car-selected" class="arrow-icon-put" ng-model="modelo" readonly>
+                </button>
+              <li class="more">
+                <button ng-click="maisOpcoes()">
+                <i>more</i>
+                  <span class="span-title">Mais opções</span>
+                  <input type="text" id="more-selected" class="arrow-icon-put" ng-model="outrasOpcoes" value="{{opcoesSelecionadas}}" readonly>
+                </button>
+              </li>
+            </ul>
+          </form>
+          <button id="btn-busca" ng-click="resultadoBusca()" class="search-btn">Buscar Carros</button>
+        </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,286 @@
+
+	.resultado-busca-box{
+
+		background-color: #efeff4;
+
+		.navbar{
+			background-color: #333538;
+			color: #fff;
+
+			.center{
+				width: 40%;
+				font-weight: 400!important;
+			}
+
+			&:after{
+				background: transparent;
+			}
+		}
+
+		.car-modal{
+				position:fixed;
+				top:0;
+				right:0;
+				bottom:0;
+				left:0;
+				z-index:3;
+				display: none;
+
+				.car-modal-content{
+						width:95%;
+						z-index:9999;
+						display: none;
+						position:relative;
+						margin: 30% auto 0 auto;
+
+						img{
+							width: 100%;
+							border-radius: 5px;
+							-webkit-border-radius: 5px;
+						}
+
+						.btn-close{
+								width:40px;
+								height:40px;
+								position:absolute;
+								right:0;
+								top:-70px;
+								background:transparent;
+								border:none;
+								font-size:25px;
+								color:#fff;
+								text-align:center;
+						}
+				}
+
+				.modal-bg{
+					position:absolute;
+					top:0;
+					right:0;
+					bottom:0;
+					left:0;
+					background-color:rgba(0,0,0,0.8);
+				}
+		}
+
+
+		.buzinada-modal{
+				position:fixed;
+				top:0;
+				right:0;
+				bottom:0;
+				left:0;
+				z-index:3;
+				display: none;
+
+				.kilometragem-buzinadas{
+					width:80%;
+					text-align: center;
+					bottom: 12px;
+					left: 50%;
+					margin: 0 0 0 -40%;
+					position: absolute;
+					z-index:9999;
+					display: none;
+
+					ul{
+
+						li{
+
+							margin: 0 0 3% 0;
+
+							.km-box{
+
+								&.btn-cancel{
+
+									button{
+										color: #ff3b30;
+										background-color: #fff;
+									}
+								}
+
+								button{
+									width: 100%;
+									text-align: center;
+									font-size: 20px;
+									color: #007aff;
+									padding: 14px 0;
+									border: none;
+									background-color:hsla(60, 100%, 100%, 0.8);
+								}
+							}
+						}
+					}
+				}
+
+				.buzinada-bg{
+					position:absolute;
+					top:0;
+					right:0;
+					bottom:0;
+					left:0;
+					background-color:rgba(0,0,0,0.6);
+				}
+		}
+
+
+		.btnBuzinadas{
+
+			width: 80%;
+			background-color:#0084cc;
+			text-align: center;
+			font-size: 17px;
+			color: #fff;
+			padding: 15px 0;
+			border:none;
+			position: fixed;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 99;
+			display: block;
+
+		}
+
+		.page-content{
+
+			.result-content{
+
+				width:90%;
+				margin:10% auto 0 auto;
+				position: relative;
+
+				.no-result-box{
+
+					text-align: center;
+					margin: 25% 0 0 0;
+
+					.img-no-result{
+						width: 70%;
+						max-width:128px;
+						height: 96px;
+						background: url(../img/no-results.jpg) no-repeat;
+						background-size: cover;
+						text-indent: -9999px;
+						overflow: hidden;
+						margin: 0 auto 2% auto;
+
+					}
+
+					.text-box{
+						margin: 7% 0 0 0;
+
+						h3{
+							font-size: 17px;
+							color: #333538;
+							font-weight: 400;
+						}
+
+						p{
+							font-size:13px;
+							color: #919296;
+							width: 65%;
+							margin: auto;
+						}
+
+					}
+
+				}
+
+				.list-result-search-cars{
+
+					margin: 17% 0 0 0;
+
+					li{
+						position: relative;
+
+						&:last-child{
+							margin: 0 0 100px 0;
+						}
+						.card{
+
+							width: 100%;
+							border-radius: 5px;
+							display: table;
+							margin: 0 auto 3% auto;
+
+							.card-content-inner{
+
+								img{
+									width: 92px;
+									height: 72px;
+									float: left;
+									display: block;
+									margin: 7px 0 0 0;
+								}
+
+								.text-content{
+									width: 59%;
+									float: left;
+									margin: 0 0 0 5%;
+									line-height:4px;
+									position: relative;
+
+									h2{
+										font-size: 16px;
+										color: #333538;
+										margin: 5px 0 0 0;
+									}
+
+									p{
+										font-size: 12px;
+										color: #333538;
+
+										&.description-car{
+											font-size: 11px;
+											color: #929293;
+											line-height: 12px;
+										}
+									}
+
+									.valor{
+										position: absolute;
+										right: 0;
+										bottom: -4px;
+										font-size: 15px;
+										color: #f58100;
+
+										span{
+											display: block;
+											font-size:11px;
+											color: #929293;
+											line-height: 20px;
+											text-align: right;
+										}
+									}
+								}
+							}
+
+							.card-footer{
+								margin:27% 0 0 0;
+								clear: both;
+								min-height: 30px;
+								z-index: 1;
+
+								.buttons-row{
+									width: 100%;
+									height: 30px;
+								}
+
+								a{
+									color: #000;
+									font-size: 12px;
+									text-transform: none;
+									display: block;
+									border: none;
+								}
+							}
+
+						}
+					}
+				}
+
+			}
+
+		}
+	}

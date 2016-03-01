@@ -1,0 +1,37 @@
+<div class="pages navbar-fixed bg-gereric-color">
+  <div class="page login-box theme-white animated pageTransition">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a ng-click="voltarInicio()" class="link icon-only back">
+                    <i class="icon icon-back"></i>
+                </a>
+            </div>
+            <div class="center">Login</div>
+            <div class="right"></div>
+        </div>
+    </div>
+     <div class="page-content">
+        <section class="login-content">
+          <figure>
+            Logo
+          </Figure>
+          <form name="loginForm" novalidate>
+            <ul>
+              <li>
+                <input type="email" name="name" placeholder="E-mail" ng-model="userName" required>
+              </li>
+              <li>
+                <input type="password" name="name" placeholder="Senha" ng-model="password" required>
+              </li>
+            </ul>
+            <div class="error-message" ng-show="mensagem == true">
+                  E-mail ou senha incorretos.
+            </div>
+            <button id="btn-login" type="submit" ng-disabled="loginForm.$invalid" name="send" ng-click="entrar()">Entrar</button>
+          </form>
+          <!-- <a href="#" class="forgot-passwod-text">Esqueci minha senha</a> -->
+        </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+.animated {
+animation-duration: 0.3s;
+animation-fill-mode: both;
+}
+
+.pageTransition{
+transition:all 0.1s;
+animation-name: slideInRight;
+animation-timing-function:ease-out;
+}
+
+.pageBack{
+transition:all 0.1s;
+animation-name: slideOutRight;
+animation-timing-function:ease-out;
+}
+
+.modal-car-transition{
+transition:all 0.1s;
+animation-name: zoomIn;
+animation-timing-function:ease-out;
+}
+
+.modal-buzinada-transition{
+transition:all 0.1s;
+animation-name: slideInUp;
+animation-timing-function:ease-out;
+}
+
+.fechar-modal-buzinada-transition{
+transition:all 0.3s;
+animation-name: slideInDown;
+animation-timing-function:ease-out;
+}
+
+@keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

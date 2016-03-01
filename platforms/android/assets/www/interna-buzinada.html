@@ -1,0 +1,58 @@
+<div class="pages navbar-fixed bg-gereric-color">
+  <div class="page resultado-busca-box theme-white animated pageTransition">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+              <a href back-button class="link icon-only back">
+                  <i class="icon icon-back"></i>
+              </a>
+            </div>
+            <div class="center">
+              Resultado
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+     <div class="page-content">
+        <section class="result-content">
+            <loading></loading>
+            <ul class="list-result-search-cars">
+              <li ng-repeat="car in cars">
+                <div class="card">
+                  <div class="card-content-inner">
+                    <a ng-click="openModal($event)">
+                      <img ng-if="car.imageURL" src="{{car.imageURL}}">
+                      <img ng-if="car.imageURL == 0" src="img/sem-foto.jpg">
+                    </a>
+                    <div class="text-content">
+                      <h2>{{car.brand}}</h2>
+                      <p class="description-car">{{car.modelDescription}}</p>
+                      <p class="year">{{car.year}}</p>
+                      <p class="kilometragem">KM {{car.km}}</p>
+                      <p class="color">{{car.color}}</p>
+                      <p class="valor">
+                        <!--<span>{{car.distancia}}</span>-->
+                        R$ {{formatReal(car.price)}}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="buttons-row">
+                      <a href="tel:{{car.phone}}" class="button phone">Telefonar</a>
+                      <a ng-click="tracarRota(car.latitude, car.longitude)" class="button route">Traçar rota</a>
+                    </div>
+                  </div>
+                </div>
+                <div ng-if="car.imageURL" class="car-modal">
+              		<div class="car-modal-content animated modal-car-transition">
+              			<button class="btn-close" ng-click="closeModal()">x</button>
+              			<img src="{{car.imageURL}}">
+              		</div>
+              		<label class="modal-bg"></label>
+              	</div>
+              </li>
+            </ul>
+        </section>
+    </div>
+  </div>
+</div>

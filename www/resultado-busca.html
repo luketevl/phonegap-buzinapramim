@@ -1,0 +1,126 @@
+<div class="pages navbar-fixed bg-gereric-color">
+  <div class="page resultado-busca-box theme-white animated pageTransition">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a ng-click="goToHome()" class="link icon-only back">
+                    <i class="icon icon-back"></i>
+                </a>
+            </div>
+            <div class="center">
+              Resultado
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+     <div class="page-content">
+        <section class="result-content">
+            <loading></loading>
+            <ul class="list-result-search-cars">
+              <li ng-repeat="car in cars">
+                <div class="card">
+                  <div class="card-content-inner">
+                    <a ng-click="openModal($event)">
+                      <img ng-if="car.imageURL" src="{{car.imageURL}}">
+                      <img ng-if="car.imageURL == 0" src="img/sem-foto.jpg">
+                    </a>
+                    <div class="text-content">
+                      <h2>{{car.brand}}</h2>
+                      <p class="description-car">{{car.modelDescription}}</p>
+                      <p class="year">{{car.year}}</p>
+                      <p class="kilometragem">KM {{car.km}}</p>
+                      <p class="color">{{car.color}}</p>
+                      <p class="valor">
+                        <span>Distancia {{car.distancia}}KM</span>
+                        R$ {{formatReal(car.price)}}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="buttons-row">
+                      <a href="tel:{{car.phone}}" class="button phone">Telefonar</a>
+                      <a ng-click="tracarRota(car.latitude, car.longitude)" class="button route">Traçar rota </a>
+                    </div>
+                  </div>
+                </div>
+                <div ng-if="car.imageURL" class="car-modal">
+              		<div class="car-modal-content animated modal-car-transition">
+              			<button class="btn-close" ng-click="closeModal()">x</button>
+              			<img src="{{car.imageURL}}">
+              		</div>
+              		<label class="modal-bg"></label>
+              	</div>
+              </li>
+            </ul>
+            <div ng-show="cars.length == 0" class="no-result-box">
+              <div class="img-no-result">
+                no-results
+              </div>
+              <div class="text-box">
+                <h3>Nenhum resultado</h3>
+                <p>
+                  Tente diferentes filtros para aumentar as suas chances em encontrar o veículo desejado.
+                </p>
+              </div>
+            </div>
+        </section>
+    </div>
+    <div class="buzinada-modal">
+      <div class="kilometragem-buzinadas animated modal-buzinada-transition">
+        <ul>
+          <li>
+            <div class="km-box">
+              <button ng-click="salvarBuzinada(1)">
+                Alertar em 1 Km
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="km-box">
+              <button ng-click="salvarBuzinada(2)">
+                Alertar em 2 Km
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="km-box">
+              <button ng-click="salvarBuzinada(5)">
+                Alertar em 5 Km
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="km-box">
+              <button ng-click="salvarBuzinada(10)">
+                Alertar em 10 Km
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="km-box">
+              <button ng-click="salvarBuzinada(20)">
+                Alertar em 20 Km
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="km-box">
+              <button ng-click="salvarBuzinadaBD(20000)">
+                Alertar em 20000 Km
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="km-box btn-cancel">
+              <button ng-click="fecharOpcoesBuzinadas()">
+                Cancelar
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <label class="buzinada-bg"></label>
+    </div>
+    <button class="btnBuzinadas" ng-click="abrirOpcoesBuzinadas($event)">Buzinar</button>
+  </div>
+</div>

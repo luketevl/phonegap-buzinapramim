@@ -34,12 +34,10 @@ var myApp = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        alert('c');
 
     },
     // Update DOM on a Received Event
     receivedEvent: function(param) {
-alert('b');
     }
 };
 
@@ -54,10 +52,10 @@ myApp.initialize();
     };
 
     populateDB = function(tx){
-      tx.executeSql('DROP TABLE IF EXISTS toots');
-      tx.executeSql('CREATE TABLE IF NOT EXISTS toots(tootId INTEGER PRIMARY KEY ASC, vehicleModelId , vehicleColorsIds , minVehicleYear, maxVehicleYear, vehiclePrice, vehicleKm, geoRadius)');
+    //  tx.executeSql('DROP TABLE IF EXISTS toots');
+     tx.executeSql('CREATE TABLE IF NOT EXISTS toots(tootId INTEGER PRIMARY KEY ASC, vehicleModelId , vehicleColorsIds , minVehicleYear, maxVehicleYear, vehiclePrice, vehicleKm, geoRadius, enable)');
       // tx.executeSql('CREATE TABLE IF NOT EXISTS toots(tootId INTEGER PRIMARY KEY ASC, enabled CHAR(1), radius INTEGER, locations INTEGER)');
-      tx.executeSql('CREATE TABLE IF NOT EXISTS locations(locationId INTEGER PRIMARY KEY ASC, storeId, latitude, longitude)');
+     tx.executeSql('CREATE TABLE IF NOT EXISTS locations(locationId INTEGER PRIMARY KEY ASC, storeId, latitude, longitude)');
     };
 
     errorDB = function(err){

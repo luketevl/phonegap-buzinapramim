@@ -48,7 +48,7 @@
                     <small class="footer-text">Habilitar ou desabilitar buzinada</small>
                     <div class="checkbox-loader"></div>
                     <label class="label-switch switch">
-                      <input type="checkbox" ng-model="checkStatus" ng-checked="buzinada.receiveNotification" ng-click="CheckBoxChanged(checkStatus, buzinada.tootId)">
+                      <input type="checkbox" ng-model="checkStatus" ng-checked="{{buzinada.enable}}" ng-click="CheckBoxChanged(checkStatus, buzinada.tootId)">
                       <div class="checkbox"></div>
                     </label>
                   </div>

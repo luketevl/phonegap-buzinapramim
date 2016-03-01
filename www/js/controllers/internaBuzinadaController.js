@@ -96,7 +96,7 @@ app.controller('internaBuzinadaController', ['$scope', '$location', '$http', '$r
                                    "modelDescription": vehicle.modelDescription,
                                    "price": vehicle.price,
                                    "year": vehicle.year
-                                   
+
                                    }
 				vehicle.phone = store.phone;
 				cars.push(vehicle);
@@ -107,9 +107,9 @@ app.controller('internaBuzinadaController', ['$scope', '$location', '$http', '$r
 	.error(function(erro){
 		alert(JSON.stringify(erro));
 	});
-                                             
+
                                              $scope.tracarRota = function(latitude, longitude){
-                                             
+
                                              launchnavigator.navigate(
                                                                       [latitude, longitude],
                                                                       null,

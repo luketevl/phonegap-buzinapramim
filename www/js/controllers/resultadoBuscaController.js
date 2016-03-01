@@ -59,7 +59,7 @@ var db = window.openDatabase("Database", "1.0", "buzinapramim", 200000);
 $scope.salvarBuzinadaBD = function(geoRadius){
 
 	db.transaction(function(transaction){
-		transaction.executeSql('INSERT INTO toots(vehicleModelId , vehicleColorsIds , minVehicleYear, maxVehicleYear, vehiclePrice, vehicleKm, geoRadius) VALUES (?, ?, ?, ? , ? , ? , ?)', [$rootScope.modelIdSelecionada, $rootScope.coresSelecionadas, $rootScope.anoMinimoSelecionado, $rootScope.anoMaximoSelecionado, $rootScope.valorCarroSelecionado, $rootScope.kmCarroSelecionado, geoRadius], success, errorDB);
+		transaction.executeSql('INSERT INTO toots(vehicleModelId , vehicleColorsIds , minVehicleYear, maxVehicleYear, vehiclePrice, vehicleKm, geoRadius, enable) VALUES (?, ?, ?, ? , ? , ? , ?, ?)', [$rootScope.modelIdSelecionada, $rootScope.coresSelecionadas, $rootScope.anoMinimoSelecionado, $rootScope.anoMaximoSelecionado, $rootScope.valorCarroSelecionado, $rootScope.kmCarroSelecionado, geoRadius, 1], success, errorDB);
 	});
 };
 	mostrarTime = function(tx){

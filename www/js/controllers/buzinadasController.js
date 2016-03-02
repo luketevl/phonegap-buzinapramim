@@ -54,6 +54,8 @@ app.controller('buzinadasController', ['$scope', '$location', '$http', '$rootSco
 		return valor;
 
 	}
+	// TRABALHANDO DADOS
+		var db = window.openDatabase("Database", "1.0", "buzinapramim", 200000);
 
 	$scope.loading = true;
 
@@ -103,14 +105,11 @@ app.controller('buzinadasController', ['$scope', '$location', '$http', '$rootSco
 			console.log(erro);
 		});
 */
-console.log(status, tootId);
 db.transaction(function(transaction){
 	transaction.executeSql('UPDATE toots SET enable = ? where tootId = ?', [status, tootId], $scope.successUpdate, $scope.errorDB);
 });
 	};
 
-// TRABALHANDO DADOS
-	var db = window.openDatabase("Database", "1.0", "buzinapramim", 200000);
 
 	// exibe
 	$scope.mostrarBuzinadas = function(tx){

@@ -1,15 +1,16 @@
 'use strict';
 app.controller('inicioController', ['$scope', '$rootScope', '$location', 'localStorageService', '$http', 'GeofenceService',  function ($scope, $rootScope, $location, localStorageService, $http, GeofenceService) {
+//  GeofenceService.initGeofence();
 
     var authData = localStorageService.get('authorizationData');
-    
+
     if (authData != null) {
         $rootScope.sessionToken = authData.token;
         $rootScope.facebookId = authData.facebookId;
         console.log('Token:'+$rootScope.sessionToken);
         $location.path('home');
     }
-     
+
     $scope.cadastro = function () {
         $location.path('cadastro');
     };
@@ -23,7 +24,7 @@ app.controller('inicioController', ['$scope', '$rootScope', '$location', 'localS
 
         facebookConnectPlugin.api("me/?fields=id,email,first_name,last_name,gender", ["public_profile", "email"],
             function onSuccess(result) {
-                
+
 
                 facebookConnectPlugin.getAccessToken(function(token) {
 
@@ -41,7 +42,7 @@ app.controller('inicioController', ['$scope', '$rootScope', '$location', 'localS
 
 				})
 				.success(function(response){
-                       
+
 					$location.path('home');
 					$rootScope.sessionToken = response.result.sessionToken;
                     $rootScope.facebookId = result.id;
@@ -57,12 +58,12 @@ app.controller('inicioController', ['$scope', '$rootScope', '$location', 'localS
 				.error(function(erro){
 					console.log(erro);
                        alert(JSON.stringify(erro));
-					
+
 				});
 
 				angular.element('#botaoFacebook').html('Logado com sucesso');
                 angular.element('#botaoFacebook').attr('disabled', false);
-                    
+
                 });
 
 
@@ -71,7 +72,7 @@ app.controller('inicioController', ['$scope', '$rootScope', '$location', 'localS
             },
             function onError(error) {
                 alert("Failed: ", error);
-                
+
             }
         );
 
@@ -90,12 +91,12 @@ app.controller('inicioController', ['$scope', '$rootScope', '$location', 'localS
                                     $scope.failure = function(erro) {
                                     console.log('erro');
                                     }
-                                    
+
                                     facebookConnectPlugin.logout($scope.success, $scope.failure);
         facebookConnectPlugin.login(["public_profile", "email"], $scope.fbLoginSuccess,
             function loginError(error) {
                 alert(JSON.stringify(error));
-               
+
                 angular.element('#botaoFacebook').html('Entrar com Facebook');
                 angular.element('#botaoFacebook').attr('disabled', false);
             }

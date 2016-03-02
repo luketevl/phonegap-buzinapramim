@@ -178,6 +178,7 @@ app.factory('GeofenceService',function($rootScope, $location, $http, $window){
 					headers:{ "X-Parse-Application-Id" : "UYY2qh6y46aSG6H1wb7JbHbd9SFXDnUli5kRPaJd", "X-Parse-REST-API-Key" : "0zgJ3YoNVgZ3n69XBR222a4qPMMDftgaUrM4TcdS", "Content-Type" : "application/json", "X-Parse-Session-Token" : token}
 				})
 				.success(function(response){
+					alert('aaaa');
 					response.result.toots.forEach(function(toot){
 						if(toot.receiveNotification){
 							$http({

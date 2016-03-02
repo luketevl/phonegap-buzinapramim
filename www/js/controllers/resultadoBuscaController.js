@@ -55,6 +55,7 @@ app.controller('resultadoBuscaController', ['$scope', '$location', '$http', '$ro
 			console.log(erro);
 		});
 	}
+
 var db = window.openDatabase("Database", "1.0", "buzinapramim", 200000);
 $scope.salvarBuzinadaBD = function(geoRadius){
 

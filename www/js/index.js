@@ -33,7 +33,7 @@ var myApp = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+      //  this.receivedEvent('deviceready');
 
     },
     // Update DOM on a Received Event
@@ -52,16 +52,16 @@ myApp.initialize();
     };
 
     populateDB = function(tx){
-    //  tx.executeSql('DROP TABLE IF EXISTS toots');
+//    tx.executeSql('DROP TABLE IF EXISTS toots');
      tx.executeSql('CREATE TABLE IF NOT EXISTS toots(tootId INTEGER PRIMARY KEY ASC, vehicleModelId , vehicleColorsIds , minVehicleYear, maxVehicleYear, vehiclePrice, vehicleKm, geoRadius, enable)');
       // tx.executeSql('CREATE TABLE IF NOT EXISTS toots(tootId INTEGER PRIMARY KEY ASC, enabled CHAR(1), radius INTEGER, locations INTEGER)');
-     tx.executeSql('CREATE TABLE IF NOT EXISTS locations(locationId INTEGER PRIMARY KEY ASC, storeId, latitude, longitude)');
+     //tx.executeSql('CREATE TABLE IF NOT EXISTS locations(locationId INTEGER PRIMARY KEY ASC, storeId, latitude, longitude)');
     };
 
     errorDB = function(err){
-      console.log('erro' + err.code);
+      alert('erro' + err.code);
     };
     successDB = function(){
-      console.log('banco criado');
+      alert('banco criado');
     };
     checkBD();

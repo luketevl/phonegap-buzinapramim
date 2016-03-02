@@ -4,6 +4,8 @@
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="Content-Security-Policy"/>
+
     <title>Buzina Pra Mim</title>
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
@@ -22,6 +24,30 @@
     ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
+
+    <script type="text/javascript">
+    	function init() {
+                if(isAndroid()){
+    	        $("script").attr("src", "../platforms/android/platform_www/cordova.js").appendTo("head");
+    	    }else if(isiOS()){
+    	        $("script").attr("src", "../platforms/ios/platform_www/cordova.js").appendTo("head");
+    	    }
+
+    	    document.addEventListener("deviceready", onDeviceReady, false);
+    	}
+
+    	function isAndroid(){
+    	    return navigator.userAgent.indexOf("Android") > 0;
+    	}
+
+    	function isiOS(){
+    	    return ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0);
+    	}
+
+    	function onDeviceReady(){
+    		console.log("device is ready");
+    	}
+    </script>
 
     <!-- BIBLIOTECAS-->
     <script type="text/javascript" src="cordova.js"></script>
@@ -53,7 +79,7 @@
 
     <base href="inicio.html"></base>
   </head>
-  <body>
+  <body  onload="init();">
 
     <div class="views">
         <div class="view">

@@ -1,6 +1,5 @@
 'use strict';
 app.controller('loginController', ['$scope', '$location', '$timeout', '$http', '$rootScope', 'GeofenceService', 'localStorageService', function ($scope, $location, $timeout, $http, $rootScope, GeofenceService, localStorageService) {
-
 	$scope.mensagem = false;
 
 	$scope.entrar = function () {
@@ -49,8 +48,5 @@ app.controller('loginController', ['$scope', '$location', '$timeout', '$http', '
 		$scope.voltarInicio = function(){
 			$location.path('inicio');
 		};
-
-		GeofenceService.initGeofence();
-
 
 }]);

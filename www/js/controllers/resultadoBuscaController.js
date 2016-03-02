@@ -58,21 +58,45 @@ app.controller('resultadoBuscaController', ['$scope', '$location', '$http', '$ro
 
 var db = window.openDatabase("Database", "1.0", "buzinapramim", 200000);
 $scope.salvarBuzinadaBD = function(geoRadius){
-
+	var id_toot 		=	'';
+	var id_vehicle 	=	'';
+	// SALVANDO BUZINADA
 	db.transaction(function(transaction){
 		transaction.executeSql('INSERT INTO toots(vehicleModelId , vehicleColorsIds , minVehicleYear, maxVehicleYear, vehiclePrice, vehicleKm, geoRadius, enable) VALUES (?, ?, ?, ? , ? , ? , ?, ?)', [$rootScope.modelIdSelecionada, $rootScope.coresSelecionadas, $rootScope.anoMinimoSelecionado, $rootScope.anoMaximoSelecionado, $rootScope.valorCarroSelecionado, $rootScope.kmCarroSelecionado, geoRadius, 1], success, errorDB);
 	});
+	// SANVANDO STORES
+	$scope.stores.forEach(function(store) {
+		distancia = Math.round(store.distance);
+		db.transaction(function(transaction){
+			transaction.executeSql('INSERT INTO stores(storeId, distance, latitude, longitude, phone) VALUES (?, ?, ?, ?, ?)', [store.storeId, distancia, store.latitude, store.longitude, store.phone], function(transaction, result){
+				id_toot = result.insertId;
+			}, errorDB);
+		});
+		// Salvando Veiculos
+		store.vehicles.forEach(function (vehicle) {
+			db.transaction(function(transaction){
+				transaction.executeSql('INSERT INTO vehicles(storeId, brand, color, distancia, imageURL, km, model, modelDescription, phone, price, year) VALUES (?, ?, ?, ? , ? , ? , ?, ?, ?, ?, ?)', [store.storeId, vehicle.brand, vehicle.color, distancia, vehicle.imageURL, vehicle.km, vehicle.model, vehicle.modelDescription, vehicle.phone, vehicle.price, vehicle.year], function(transaction, result){
+					id_vehicle = result.insertId;
+				}, errorDB);
+			});
+
+			// Salvando Vinculos
+			db.transaction(function(transaction){
+				transaction.executeSql('INSERT INTO tootVehicles(tootId, vehicles_id) VALUES (?, ?)', [id_toot, id_vehicle], success, errorDB);
+			});
+		});
+	});
+
 };
-	mostrarTime = function(tx){
+	mostrarCadastros = function(tx){
 		tx.executeSql("SELECT * from toots", [], successShow, errorDB );
 	};
     errorDB = function(err){
       console.log('erro' + err.code);
-			alert('Nao Cadastrado');
     };
     success = function(){
-      alert('Cadastrado');
-			db.transaction(mostrarTime, errorDB);
+      console.log('Cadastrado');
+			db.transaction(mostrarCadastros, errorDB);
     };
 
 		 successShow = function(tx, result){
@@ -148,10 +172,12 @@ $scope.salvarBuzinadaBD = function(geoRadius){
 
 				})
 				.success(function(response){
+					console.log(response);
 						$scope.loading = false;
 						var cars = [];
 						var distancia;
-						response.result.stores.forEach(function(store) {
+						$scope.stores = response.result.stores;
+						$scope.stores.forEach(function(store) {
 							distancia = Math.round(store.distance);
 							store.vehicles.forEach(function (vehicle) {
                                                    assembleCars  =  {

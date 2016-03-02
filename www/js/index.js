@@ -52,16 +52,25 @@ myApp.initialize();
     };
 
     populateDB = function(tx){
-//    tx.executeSql('DROP TABLE IF EXISTS toots');
-     tx.executeSql('CREATE TABLE IF NOT EXISTS toots(tootId INTEGER PRIMARY KEY ASC, vehicleModelId , vehicleColorsIds , minVehicleYear, maxVehicleYear, vehiclePrice, vehicleKm, geoRadius, enable)');
+    tx.executeSql('DROP TABLE IF EXISTS stores');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS stores(store_id INTEGER PRIMARY KEY ASC, storeId, distance, latitude, longitude, phone)');
+
+    tx.executeSql('DROP TABLE IF EXISTS vehicles');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS vehicles(vehicles_id INTEGER PRIMARY KEY ASC, storeId, brand, color, distancia, imageURL, km, model, modelDescription, phone, price, year)');
+
+    tx.executeSql('DROP TABLE IF EXISTS toots');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS toots(tootId INTEGER PRIMARY KEY ASC,  vehicleModelId , vehicleColorsIds , minVehicleYear, maxVehicleYear, vehiclePrice, vehicleKm, geoRadius, enable)');
+
+    tx.executeSql('DROP TABLE IF EXISTS tootVehicles');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS tootVehicles(tootVehicles INTEGER PRIMARY KEY ASC, tootId, vehicles_id)');
       // tx.executeSql('CREATE TABLE IF NOT EXISTS toots(tootId INTEGER PRIMARY KEY ASC, enabled CHAR(1), radius INTEGER, locations INTEGER)');
      //tx.executeSql('CREATE TABLE IF NOT EXISTS locations(locationId INTEGER PRIMARY KEY ASC, storeId, latitude, longitude)');
     };
 
     errorDB = function(err){
-      alert('erro' + err.code);
+      console.log('erro' + err.code);
     };
     successDB = function(){
-      alert('banco criado');
+      console.log('banco criado');
     };
     checkBD();
